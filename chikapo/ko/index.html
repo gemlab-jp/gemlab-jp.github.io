@@ -25,27 +25,53 @@ body{margin:0;background:#FFFFFF;word-break:keep-all;overflow-wrap:anywhere}
 a{color:#B52A2A}a:hover{color:#8E1F1F}
 h1,h2,h3{font-family:"Zen Maru Gothic","Noto Sans KR","Noto Sans JP",sans-serif}
 html{scroll-behavior:smooth}
-section[id]{scroll-margin-top:8px}
+section[id]{scroll-margin-top:88px}
+.site-header{position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(27,42,90,0.06)}
+.site-header .m-actions{display:none;align-items:center;gap:8px}
+.site-header .burger{width:44px;height:44px;border:1.5px solid #1B2A5A;border-radius:12px;background:#FFFFFF;color:#1B2A5A;display:inline-flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
+.site-header .burger .i-close{display:none}
+.site-header.open .burger .i-open{display:none}
+.site-header.open .burger .i-close{display:block}
+@media (max-width:860px){
+.site-header .bar{padding:8px 16px !important;flex-wrap:nowrap !important}
+.site-header .logo img{width:36px !important;height:36px !important}
+.site-header .logo span{font-size:22px !important}
+.site-header .m-actions{display:flex}
+.site-header nav.menu{display:none !important;position:absolute;top:100%;left:0;right:0;background:#FFFFFF;flex-direction:column;align-items:stretch !important;gap:0 !important;padding:4px 20px 20px;border-bottom:1px solid #F0E3E1;box-shadow:0 12px 24px rgba(27,42,90,0.12);font-size:17px !important}
+.site-header.open nav.menu{display:flex !important}
+.site-header nav.menu .navlink{padding:14px 4px;border-bottom:1px solid #F0E3E1;min-height:44px;box-sizing:border-box}
+.site-header nav.menu .lang{align-self:flex-start;margin-top:16px}
+.site-header nav.menu .cta{display:none !important}
+.site-header .m-actions .cta{padding:8px 14px !important;font-size:14px}
+section[id]{scroll-margin-top:72px}
+}
 </style>
 </head>
 <body>
 <div style="font-family: 'Noto Sans KR', 'Noto Sans JP', sans-serif; color: #1B2A5A; line-height: 1.75; font-size: 17px; background: #FFFFFF">
 
 <!-- ヘッダー -->
-<header style="background: #FFFFFF; border-bottom: 1px solid #F0E3E1">
-<div style="max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-<a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1B2A5A">
+<header class="site-header" style="background: #FFFFFF; border-bottom: 1px solid #F0E3E1">
+<div class="bar" style="max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<a class="logo" href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1B2A5A">
 <img src="../icon.png" alt="" style="width: 40px; height: 40px; border-radius: 10px">
 <span style="font-family: 'Zen Maru Gothic', sans-serif; font-weight: 900; font-size: 26px; letter-spacing: 0.02em">ちかポ</span>
 </a>
-<nav aria-label="페이지 메뉴" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; font-size: 15px; font-weight: 500">
-<a href="#features" style="color: #1B2A5A; text-decoration: none">할 수 있는 것</a>
-<a href="#howto" style="color: #1B2A5A; text-decoration: none">사용법</a>
-<a href="#safe" style="color: #1B2A5A; text-decoration: none">안심 장치</a>
-<a href="#faq" style="color: #1B2A5A; text-decoration: none">자주 묻는 질문</a>
-<span role="group" aria-label="言語 / 언어" style="display: inline-flex; border: 1.5px solid #1B2A5A; border-radius: 999px; overflow: hidden; font-size: 14px; font-weight: 700"><a href="../" lang="ja" style="background: #FFFFFF; color: #1B2A5A; text-decoration: none; padding: 9px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">日本語</a><a href="./" lang="ko" aria-current="page" style="background: #1B2A5A; color: #FFFFFF; text-decoration: none; padding: 9px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">한국어</a></span>
-<a href="#tester" style="background: #D63B3B; color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 10px 18px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">테스터 모집 중</a>
+<nav class="menu" id="site-menu" aria-label="페이지 메뉴" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; font-size: 15px; font-weight: 500">
+<a class="navlink" href="#features" style="color: #1B2A5A; text-decoration: none">할 수 있는 것</a>
+<a class="navlink" href="#howto" style="color: #1B2A5A; text-decoration: none">사용법</a>
+<a class="navlink" href="#safe" style="color: #1B2A5A; text-decoration: none">안심 장치</a>
+<a class="navlink" href="#faq" style="color: #1B2A5A; text-decoration: none">자주 묻는 질문</a>
+<span class="lang" role="group" aria-label="言語 / 언어" style="display: inline-flex; border: 1.5px solid #1B2A5A; border-radius: 999px; overflow: hidden; font-size: 14px; font-weight: 700"><a href="../" lang="ja" style="background: #FFFFFF; color: #1B2A5A; text-decoration: none; padding: 9px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">日本語</a><a href="./" lang="ko" aria-current="page" style="background: #1B2A5A; color: #FFFFFF; text-decoration: none; padding: 9px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">한국어</a></span>
+<a class="cta" href="#tester" style="background: #D63B3B; color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 10px 18px; white-space: nowrap; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">테스터 모집 중</a>
 </nav>
+<span class="m-actions">
+<a class="cta" href="#tester" style="background: #D63B3B; color: #FFFFFF; text-decoration: none; font-weight: 700; white-space: nowrap; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">테스터 모집 중</a>
+<button class="burger" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="메뉴 열기" data-open="메뉴 열기" data-close="메뉴 닫기">
+<svg class="i-open" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+<svg class="i-close" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+</button>
+</span>
 </div>
 </header>
 
@@ -377,5 +403,16 @@ section[id]{scroll-margin-top:8px}
 </footer>
 
 </div>
+<script>
+(function(){
+var h=document.querySelector('.site-header');if(!h)return;
+var b=h.querySelector('.burger'),L=b.getAttribute('data-open'),C=b.getAttribute('data-close');
+function set(o){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?C:L);}
+b.addEventListener('click',function(){set(!h.classList.contains('open'));});
+h.querySelectorAll('nav.menu a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+document.addEventListener('click',function(e){if(!h.contains(e.target))set(false);});
+})();
+</script>
 </body>
 </html>
